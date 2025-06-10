@@ -3,6 +3,7 @@ import Welcome from "./components/Welcome";
 import Card from "./components/Card";
 import Header from "./components/Header";
 import PostPreview from "./components/PostPreview";
+import Footer from "./components/Footer";
 const users = [
   {
     name: "Vibe coding” is just AI startup marketing",
@@ -38,6 +39,7 @@ function App() {
           />
         ))}
       </div>
+      <Footer />
       <Welcome />
       <div className="flex justify-center items-center gap-6 mt-20">
         <Card
