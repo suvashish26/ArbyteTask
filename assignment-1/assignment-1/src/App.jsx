@@ -1,19 +1,8 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
-// import ProductList from "./components/product";
-import Header from "./components/header";
-import Footer from "./components/footer";
-// import { comment } from "postcss";
-import PostPreview from "./components/Postpreview";
-import SearchFilter from "./components/search-filter";
-import Modal from "./components/modals";
-import Form from "./components/Form";
-const dummyProductData = ["Product 1", "Product 2", "Product 3"];
-
-const flag = "ON";
-
+import React from "react";
+import Welcome from "./components/Welcome";
+import Card from "./components/Card";
+import Header from "./components/Header";
+import PostPreview from "./components/PostPreview";
 const users = [
   {
     name: "Vibe coding” is just AI startup marketing",
@@ -34,47 +23,46 @@ const users = [
     avatar: "https://i.pravatar.cc/150?img=7",
   },
 ];
-
 function App() {
   return (
     <div>
-      <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
-        HamroSoch
-      </h1>
-      <p className="text-2xl font-bold text-center mb-5 text-gray-400">
-        Your platform to gossip..
-      </p>
-      {/* <Form></Form> */}
-      {/* <Header title="Welcome to My Blog"></Header> */}
-      {/* <SearchFilter></SearchFilter> */}
-      {users.map((user, index) => (
-        <PostPreview
-          key={index}
-          names={user.name}
-          bio={user.bio}
-          avatar={user.avatar}
-          blogTitle={user.blogTitle}
+      <Header />
+      <div className="w-full px-5">
+        {users.map((user, index) => (
+          <PostPreview
+            key={index}
+            names={user.name}
+            bio={user.bio}
+            avatar={user.avatar}
+            blogTitle={user.blogTitle}
+          />
+        ))}
+      </div>
+      <Welcome />
+      <div className="flex justify-center items-center gap-6 mt-20">
+        <Card
+          name="Suvashish"
+          age={19}
+          imageUrl="https://media.licdn.com/dms/image/v2/D4D03AQEoupgrys0I1A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1698410597400?e=1755129600&v=beta&t=ZCmCEKwXWjLX3B7TMOSgL_LJVem6PJ4ilnz1llAS5yY"
         />
-      ))}
-
-      {/* {users.map((user, index) => (
-        <Template
-          key={index}
-          names={user.name}
-          age={user.age}
-          bio={user.bio}
-          avatar={user.avatar}
+        <Card
+          name="Jonas"
+          age={34}
+          imageUrl="https://randomuser.me/api/portraits/men/32.jpg
+"
         />
-      ))} */}
-      {/* <Button button="Read More" /> */}
-
-      {/*
-      <h1>React JS Components </h1>
-      <button>Toggle Text</button>
-      <ProductList dummy={dummyProductData} name="Suvashish"></ProductList>
-      */}
-      {/* <Modal> </Modal> */}
-      <Footer footer="This is the footer section © 2025"></Footer>
+        <Card
+          name="Anna"
+          age={23}
+          imageUrl="https://randomuser.me/api/portraits/women/44.jpg
+"
+        />
+        <Card
+          name="Sophia"
+          age={21}
+          imageUrl="https://randomuser.me/api/portraits/women/32.jpg"
+        />
+      </div>
     </div>
   );
 }
