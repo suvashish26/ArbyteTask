@@ -27,18 +27,18 @@ const Loading = () => {
     // Set timeout for 2 seconds (2000 ms)
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 5000);
+    }, 2000);
 
     // Clear timeout if the component unmounts before 2 seconds
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <div>
+    <div className="flex items-center justify-center h-screen text-xl font-semibold">
       {loading ? (
-        <p>Loading...</p>
+        <p className="text-blue-500 animate-pulse">Loading...</p>
       ) : (
-        <ul>
+        <ul className="list-disc text-left">
           {items.map((item) => (
             <li key={item.id}>
               {item.name} = {item.category}
