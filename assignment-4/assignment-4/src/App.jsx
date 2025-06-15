@@ -1,39 +1,37 @@
-import React from "react";
-import { useState } from "react";
-import { useEffect } from "react";
-
+import React, { useState, useEffect } from "react";
+import Loading from "./components/Loading";
 function App() {
   const [count, setCount] = useState(0);
   const [changeStyle, setChangeStyle] = useState(false);
 
   useEffect(() => {
     console.log("Component mounted");
-  }, []); // this will run once
+  }, []);
 
   useEffect(() => {
     console.log("Count changes");
     if (count === 10) setChangeStyle(true);
-  }, [count]); // maintaining side effect on the count
+  }, [count]);
 
-  console.log(changeStyle);
-  function changeCount() {
-    setCount(count + 1);
-  }
+  const changeCount = () => setCount(count + 1);
+
   return (
-    <>
-      <div>
+    <div>
+      <Loading />
+      <div className="flex flex-col items-center justify-center h-screen bg-gray-100 space-y-4">
         <button
-          style={{
-            backgroundColor: changeStyle ? "black" : "red",
-            color: changeStyle ? "#fff" : "#000",
-          }}
           onClick={changeCount}
+          className={`px-6 py-3 rounded-lg text-sm font-semibold transition duration-300 ${
+            changeStyle
+              ? "bg-black text-white hover:bg-gray-800"
+              : "bg-red-500 text-black hover:bg-red-600"
+          }`}
         >
           Click Me
         </button>
-        <p>Increase my {count}</p>
+        <p className="text-lg font-medium">Increase my {count}</p>
       </div>
-    </>
+    </div>
   );
 }
 
