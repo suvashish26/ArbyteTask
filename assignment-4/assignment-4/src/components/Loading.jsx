@@ -24,24 +24,28 @@ const Loading = () => {
   // )
   const [loading, setLoading] = useState(true);
   useEffect(() => {
-    // Set timeout for 5 seconds (5000 ms)
+    // Set timeout for 2 seconds (2000 ms)
     const timer = setTimeout(() => {
       setLoading(false);
     }, 5000);
 
-    // Clear timeout if the component unmounts before 5 seconds
+    // Clear timeout if the component unmounts before 2 seconds
     return () => clearTimeout(timer);
   }, []);
-  
+
   return (
     <div>
-      <ul>
-        {items.map((item) => (
-          <li key={item.id}>
-            {item.name} = {item.category}
-          </li>
-        ))}
-      </ul>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <ul>
+          {items.map((item) => (
+            <li key={item.id}>
+              {item.name} = {item.category}
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
