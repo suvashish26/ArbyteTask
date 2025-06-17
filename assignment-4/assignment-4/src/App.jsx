@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Loading from "./components/Loading";
 import DigitalClock from "./components/Clock";
+import Clock from "./components/DigitalClock";
 function App() {
   const [count, setCount] = useState(0);
   const [changeStyle, setChangeStyle] = useState(false);
@@ -20,6 +21,7 @@ function App() {
     <div>
       <Loading />
       <DigitalClock />
+      <Clock />
       <div className="flex flex-col items-center justify-center h-screen bg-gray-100 space-y-4">
         <button
           onClick={changeCount}
