@@ -1,6 +1,4 @@
 import React from "react";
-import Welcome from "./components/Welcome";
-import Card from "./components/Card";
 import Header from "./components/Header";
 import PostPreview from "./components/PostPreview";
 import Footer from "./components/Footer";

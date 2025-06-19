@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="w-full bg-gray-100 text-gray-700 py-30 mt-10">
+    <footer className="w-full bg-gray-50 text-gray-700 py-30 mt-10">
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
         <p className="text-sm text-center md:text-left">
           &copy; {new Date().getFullYear()} Gossipers. All rights reserved.
