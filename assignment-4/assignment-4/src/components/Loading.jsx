@@ -38,10 +38,18 @@ const Loading = () => {
       {loading ? (
         <p className="text-blue-500 animate-pulse">Loading...</p>
       ) : (
-        <ul className="list-disc text-left">
+        <ul className="list-disc text-left space-y-3">
           {items.map((item) => (
-            <li key={item.id}>
-              {item.name} = {item.category}
+            <li
+              key={item.id}
+              className="bg-blue-50 rounded-lg px-4 py-2 shadow hover:bg-blue-100 transition flex flex-col sm:flex-row sm:items-center gap-2"
+            >
+              <span className="font-bold text-blue-700">{item.name}</span>
+              <span className="text-gray-500 hidden sm:inline">|</span>
+              <span className="text-purple-700">{item.category}</span>
+              <span className="ml-auto text-xs bg-blue-200 text-blue-800 rounded px-2 py-1">
+                ${item.price}
+              </span>
             </li>
           ))}
         </ul>
