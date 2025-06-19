@@ -40,31 +40,6 @@ function App() {
         ))}
       </div>
       <Footer />
-      <Welcome />
-      <div className="flex justify-center items-center gap-6 mt-20">
-        <Card
-          name="Suvashish"
-          age={19}
-          imageUrl="https://media.licdn.com/dms/image/v2/D4D03AQEoupgrys0I1A/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1698410597400?e=1755129600&v=beta&t=ZCmCEKwXWjLX3B7TMOSgL_LJVem6PJ4ilnz1llAS5yY"
-        />
-        <Card
-          name="Jonas"
-          age={34}
-          imageUrl="https://randomuser.me/api/portraits/men/32.jpg
-"
-        />
-        <Card
-          name="Anna"
-          age={23}
-          imageUrl="https://randomuser.me/api/portraits/women/44.jpg
-"
-        />
-        <Card
-          name="Sophia"
-          age={21}
-          imageUrl="https://randomuser.me/api/portraits/women/32.jpg"
-        />
-      </div>
     </div>
   );
 }
