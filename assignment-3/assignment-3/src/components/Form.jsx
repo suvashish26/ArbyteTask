@@ -7,10 +7,19 @@ function Form() {
 
   function handleLogin(e) {
     e.preventDefault();
+    if (!email || !password) {
+      alert("Please enter both email and password.");
+      return;
+    }
     setLogin(true);
   }
 
-  function handleLogout() {
+  function handleLogout(e) {
+    e.preventDefault();
+    if (email || password) {
+      setEmail("");
+      setPassword("");
+    }
     setLogin(false);
   }
 
