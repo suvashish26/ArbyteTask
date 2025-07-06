@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-export default function Login({ setIsAuthenticated }) {
+export default function Login({ setIsAuthenticated, setRole }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -11,8 +11,10 @@ export default function Login({ setIsAuthenticated }) {
       setError("Email and password are required");
       return;
     }
+    const userRole = email === "admin@example.com" ? "admin" : "user";
     setIsAuthenticated(true);
-    navigate("/admin");
+    setRole(userRole);
+    navigate(userRole === "admin" ? "/admin" : "/user");
   }
   return (
     <div>
