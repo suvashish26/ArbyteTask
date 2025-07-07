@@ -1,10 +1,19 @@
-import React from "react";
+import { useState } from "react";
+import ThemeToggle from "./components/ThemeToggle";
+import { ThemeContext } from "./context/ThemeContext";
 
 function App() {
+  const [theme, setTheme] = useState("light");
+
+  const toggleTheme = () =>
+    setTheme((prev) => (prev === "light" ? "dark" : "light"));
+
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </div>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <div>
+        <ThemeToggle />
+      </div>
+    </ThemeContext.Provider>
   );
 }
 
