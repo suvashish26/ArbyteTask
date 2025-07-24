@@ -1,7 +1,7 @@
 import React from "react";
 import NavigationBar from "../components/NavigationBar";
 import { Typewriter } from "react-simple-typewriter";
-
+import { Link } from "react-router-dom";
 function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-white to-gray-100 text-gray-800">
@@ -35,18 +35,18 @@ function Home() {
 
         {/* CTA Buttons */}
         <div className="flex gap-4 flex-wrap justify-center">
-          <a
-            href="#projects"
+          <Link
+            to="Projects"
             className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition"
           >
             View Projects
-          </a>
-          <a
-            href="#contact"
+          </Link>
+          <Link
+            to="About"
             className="border border-blue-600 text-blue-600 px-6 py-3 rounded-full hover:bg-blue-50 transition"
           >
             Contact Me
-          </a>
+          </Link>
         </div>
       </main>
     </div>
