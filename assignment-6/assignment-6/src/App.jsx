@@ -14,12 +14,18 @@ const ProtectedRoute = React.lazy(() => import("./components/ProtectedRoute"));
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [role, setRole] = useState("");
+
   return (
     <>
-      <Navbar role={role} />
+      <Navbar
+        role={role}
+        setIsAuthenticated={setIsAuthenticated}
+        setRole={setRole}
+      />
+
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Home />} />
           <Route
             path="/login"
             element={
@@ -29,7 +35,8 @@ function App() {
               />
             }
           />
-          <Route path="/register" element={<Register />}></Route>
+          <Route path="/register" element={<Register />} />
+
           <Route
             path="/admin"
             element={
@@ -38,6 +45,7 @@ function App() {
               </ProtectedRoute>
             }
           />
+
           <Route
             path="/user"
             element={
@@ -50,6 +58,7 @@ function App() {
               </ProtectedRoute>
             }
           />
+
           <Route path="/post" element={<PostLayout />}>
             <Route path=":id" element={<PostDetails />} />
           </Route>
